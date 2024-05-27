@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script> 
+        // JINJA FLASK + JS
+        var data = {{ data.clientes | tojson }}
+        var paragrafo = data.map(function(cliente){
+            return '<p>' + cliente.nome + '</p>';
+        })
+
+            document.body.innerHTML += paragrafo.join('');
+            console.table(data)
+
+
+    </script>
+    
+</body>
+</html>
